@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard'
 import Navbar from './components/Navbar'
 import Publish from './pages/Publish'
 import Stories from './pages/Stories'
+import About from './pages/About'
 import './index.css'
 
 
@@ -23,6 +24,7 @@ export default function App() {
       <Route exact path="/dashboard" element={<Dashboard />} />
       <Route exact path="/publish" element={<Publish />} />
       <Route exact path="/stories" element={<Stories />} />
+      <Route exact path="/about" element={<About />} />
     </Routes>
     </BrowserRouter>
     
