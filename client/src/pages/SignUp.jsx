@@ -11,7 +11,11 @@ import {
 
 function SignUp() {
   const [formData, setFormData] = useState({});
-  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const {
+    currentUser,
+    loading,
+    error: errorMessage,
+  } = useSelector((state) => state.user);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -52,7 +56,11 @@ function SignUp() {
   };
 
   const close = () => {
-    navigate("/");
+    if (!currentUser) {
+      navigate("/");
+    } else {
+      navigate("/dashboard");
+    }
   };
 
   return (

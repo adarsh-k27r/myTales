@@ -2,10 +2,22 @@ import React from "react";
 import logo from "../assets/mytales_logo.png";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Navbar } from "flowbite-react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux/user/userSlice";
 
 function NavBar() {
+  const { currentUser } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
   const path = useLocation().pathname;
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    if (!currentUser) {
+      navigate("/");
+    }
+  };
 
   const handler = () => {
     navigate("/");
@@ -36,13 +48,22 @@ function NavBar() {
 
       <ul className="flex justify-center items-center md:order-2 gap-3">
         <li>
-          <Link
-            to="/sign-in"
-            className="hover:text-[#FF597B] hover:bg-[#ff8e9d14] sm:font-medium px-[17px] py-[12px] flex justify-center items-center bg-white border border-solid border-[#ff000028] rounded-[15px] box-border font-sans text-[10pt] cursor-pointer duration-[0.4s] "
-          >
-            Sign In&nbsp;&nbsp;
-            <i className="fa-solid fa-circle-user fa-xl" />
-          </Link>
+          {!currentUser ? (
+            <Link
+              to="/sign-in"
+              className="hover:text-[#FF597B] hover:bg-[#ff8e9d14] sm:font-medium px-[17px] py-[12px] flex justify-center items-center bg-white border border-solid border-[#ff000028] rounded-[15px] box-border font-sans text-[10pt] cursor-pointer duration-[0.4s] "
+            >
+              Sign In&nbsp;&nbsp;
+              <i className="fa-solid fa-circle-user fa-xl" />
+            </Link>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="hover:text-[#FF597B] hover:bg-[#ff8e9d14] sm:font-medium px-[17px] py-[12px] flex justify-center items-center bg-white border border-solid border-[#ff000028] rounded-[15px] box-border font-sans text-[10pt] cursor-pointer duration-[0.4s] "
+            >
+              Logout
+            </button>
+          )}
         </li>
         <li>
           <Navbar.Toggle />
@@ -51,15 +72,40 @@ function NavBar() {
 
       <Navbar.Collapse>
         <Navbar.Link as={"div"}>
-          <NavLink
-            to="/"
-            style={({ isActive }) => ({
-              color: isActive ? "#ff597b" : "",
-            })}
-            className="leading-[2] hover:text-[#ff597b] sm:text-base "
-          >
-            Home
-          </NavLink>
+          {!currentUser ? null : (
+            <NavLink
+              to="/dashboard"
+              style={({ isActive }) => ({
+                color: isActive ? "#ff597b" : "",
+              })}
+              className="leading-[2] hover:text-[#FF597B] sm:text-base"
+            >
+              Profile
+            </NavLink>
+          )}
+        </Navbar.Link>
+        <Navbar.Link as={"div"}>
+          {!currentUser ? (
+            <NavLink
+              to="/"
+              style={({ isActive }) => ({
+                color: isActive ? "#ff597b" : "",
+              })}
+              className="leading-[2] hover:text-[#ff597b] sm:text-base "
+            >
+              Home
+            </NavLink>
+          ) : (
+            <NavLink
+              to="/publish"
+              style={({ isActive }) => ({
+                color: isActive ? "#ff597b" : "",
+              })}
+              className="leading-[2] hover:text-[#ff597b] sm:text-base "
+            >
+              Publish
+            </NavLink>
+          )}
         </Navbar.Link>
 
         <Navbar.Link as={"div"}>
