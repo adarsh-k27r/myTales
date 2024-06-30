@@ -8,9 +8,10 @@ import {
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice";
+import OAuth from "../components/OAuth";
 
 function SignIn() {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({}); 
   const {
     currentUser,
     loading,
@@ -133,12 +134,7 @@ function SignIn() {
 
           <div className="flex justify-center w-[100%] my-[4%] ">OR</div>
 
-          <button
-            type="button"
-            className="google_logo font-sans text-sm my-[2%] font-[400] w-[55%] sm:w-[50%] border border-solid border-[rgb(117,117,117,1)] rounded-[15px] p-[10px] pl-[15px] bg-white cursor-pointer "
-          >
-            Sign-In with Google
-          </button>
+          <OAuth />
 
           <div className="font-sans my-[3%] text-[rgb(117,117,117,1)] text-[10px] ">
             Not a member?{" "}
