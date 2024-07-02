@@ -12,10 +12,23 @@ function NavBar() {
   const path = useLocation().pathname;
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    dispatch(logout());
-    if (!currentUser) {
-      navigate("/");
+  const handleLogout = async () => {
+    try {
+      const res = await fetch("/api/user/signout", {
+        method: "POST",
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        console.log(data.message);
+      } else {
+        dispatch(logout());
+      }
+
+      if (!currentUser) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error.message);
     }
   };
 
