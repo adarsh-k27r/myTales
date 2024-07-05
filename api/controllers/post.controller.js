@@ -27,6 +27,11 @@ export const create = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-
-
 };
+
+
+// Route 2: Get all the Public Posts.
+
+export const getposts= async(req, res, next)=>{
+  
+}

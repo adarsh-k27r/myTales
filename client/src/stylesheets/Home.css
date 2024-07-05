@@ -1,0 +1,20 @@
+@media only screen and (max-width: 1036px) {
+
+
+    .parallax {
+        display: none !important;
+    }
+
+}
+
+
+
+.parallax {
+    background-image: url("../assets/brothers_parallax_image.jpg");
+    height: 60vh;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+}
