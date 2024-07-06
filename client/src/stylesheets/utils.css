@@ -41,3 +41,21 @@ input:focus {
 i {
     cursor: pointer;
 }
+
+@media only screen and (max-width:1036px) {
+    .bg_pitch {
+        height: fit-content !important;
+        background-image: none !important;
+    }
+
+    footer{
+        height: fit-content !important;
+        padding-bottom: 5%;
+    }
+}
+
+
+.bg_pitch {
+    background-image: url("../assets/footer_image.svg");
+    background-position: left;
+}

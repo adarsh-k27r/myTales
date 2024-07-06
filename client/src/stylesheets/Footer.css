@@ -1,0 +1,36 @@
+@media only screen and (max-width:1036px) {
+
+    .footer_sec {
+        height: fit-content !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .site {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .span {
+        width: fit-content !important;
+    }
+}
+
+.site a {
+    text-decoration: none;
+    color: #567189;
+}
+
+.site li {
+    margin-bottom: 10px;
+    font-size: small;
+}
+
+.red:hover {
+    color: red;
+}
+
+.blue:hover {
+    color: rgb(46, 123, 255);
+}
