@@ -23,9 +23,18 @@ font-family: 'Raleway', sans-serif; */
     box-sizing: border-box;
 }
 
+.font_open_sans {
+    font-family: 'Open Sans', sans-serif;
+}
 
-input[type="text"]:focus {
-    outline: none;
+
+.font_verdana {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+input:focus {
+    outline: none !important;
 }
 
 
