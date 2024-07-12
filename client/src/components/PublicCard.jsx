@@ -4,7 +4,26 @@ import "../stylesheets/utils.css";
 import avatar from "../assets/male_avatar_default.svg";
 import moment from "moment";
 
-function PublicCard() {
+function PublicCard(props) {
+  const navigate = useNavigate();
+  const { post } = props;
+
+  const date_ = new Date(post.createdAt);
+  const formatted_date = moment(date_).format("MMM D, YYYY");
+
+  const WordCount = (str) => {
+    const len = str.split(" ").length;
+    const time = Math.floor(len / 200);
+    if (time == 0) {
+      return "few sec";
+    }
+    return time + " min";
+  };
+
+  const handler = () => {
+    navigate(`/post/${post.slug}`);
+  };
+
   return (
     <>
       <div className="my-[1%] mx-[5%] ">
@@ -16,26 +35,30 @@ function PublicCard() {
             alt="avatar"
             className="w-[5%] sm:w-[2%] mr-[5px] "
           />
-          <p className="my-[0] mx-[5px] text-[10px] font_arial  ">Author</p>
+          <p className="my-[0] mx-[5px] text-[10px] font_arial  ">
+            {post.author}
+          </p>
           <span className="text-[rgba(117,117,117,1)] font_arial my-[0] mx-[4px]">
             .
           </span>
           <p className="my-[0] mx-[5px] font_arial text-[10px] text-[rgba(117,117,117,1)] ">
             {" "}
-            Date{" "}
+            {formatted_date}{" "}
           </p>
         </div>
 
-        <div className="flex mb-[2%] ">
+        <div className="flex mb-[2%] " onClick={handler}>
           <div className="w-[100%] cursor-pointer ">
             <h1 className="text-[20px] font-[600] mb-[2%] font_verdana cursor-pointer ">
-              Title
+              {post.title.substr(0, 20) + ".."}
             </h1>
-            <p className="font_open_sans cursor-pointer ">Body</p>
+            <p className="font_open_sans cursor-pointer ">
+              {post.content.substr(0, 40) + "..."}
+            </p>
 
             <div className="flex mt-[3%] ">
               <p className="ml-[0] mr-[auto] sm:mr-[80%] text-[10px] text-[rgba(117,117,117,1)] font_helvetica ">
-                2 sec read
+                {WordCount(post.content)} read
               </p>
             </div>
           </div>
