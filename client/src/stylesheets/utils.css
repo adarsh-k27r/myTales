@@ -43,6 +43,10 @@ font-family: 'Raleway', sans-serif; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.font_playfair {
+    font-family: 'Playfair', serif;
+}
+
 
 input:focus {
     outline: none !important;
@@ -79,4 +83,8 @@ i {
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+.fade {
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.662), #fff);
 }
