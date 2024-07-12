@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useLayoutEffect } from "react";
+import Panel from "../components/Panel";
 
-const Stories = () => {
+function Stories() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
-    <div>
-      Stories
-    </div>
-  )
+    <>
+      <div className="flex w-[100%] ">
+        <Panel />
+      </div>
+    </>
+  );
 }
 
 export default Stories;

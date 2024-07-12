@@ -27,6 +27,17 @@ font-family: 'Raleway', sans-serif; */
     font-family: 'Open Sans', sans-serif;
 }
 
+.font_arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.font_helvetica {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.font_poppins {
+    font-family: 'Poppins', sans-serif;
+}
 
 .font_verdana {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -48,7 +59,7 @@ i {
         background-image: none !important;
     }
 
-    footer{
+    footer {
         height: fit-content !important;
         padding-bottom: 5%;
     }
@@ -58,4 +69,14 @@ i {
 .bg_pitch {
     background-image: url("../assets/footer_image.svg");
     background-position: left;
+}
+
+
+.content-v {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }

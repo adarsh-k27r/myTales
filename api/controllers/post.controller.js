@@ -19,6 +19,7 @@ export const create = async (req, res, next) => {
     ...req.body,
     slug,
     userId: req.user.id,
+    author: req.user.author,
   });
 
   try {
@@ -29,9 +30,29 @@ export const create = async (req, res, next) => {
   }
 };
 
+// Route 2: Get the Posts based on Query.
 
-// Route 2: Get all the Public Posts.
+export const getposts = async (req, res, next) => {
+  try {
+    const startIndex = parseInt(req.query.startIndex) || 0;
+    const limit = parseInt(req.query.limit) || 9;
+    const sortDirection = req.query.order === "asc" ? 1 : -1;
+    const posts = await Post.find({
+      ...(req.query.userId && { userId: req.query.userId }),
+      ...(req.query.slug && { slug: req.query.slug }),
+      ...(req.query.postId && { _id: req.query.postId }),
+    })
+      .sort({ updatedAt: sortDirection })
+      .skip(startIndex)
+      .limit(limit);
 
-export const getposts= async(req, res, next)=>{
-  
-}
+    const totalPosts = await Post.countDocuments();
+
+    res.status(200).json({
+      posts,
+      totalPosts,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
