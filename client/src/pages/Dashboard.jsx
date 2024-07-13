@@ -22,6 +22,30 @@ function Dashboard() {
     fetchUserPosts();
   }, []);
 
+  // Delete Post function.
+
+  const deletePost = async (postIdToDelete) => {
+    try {
+      const res = await fetch(
+        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      const data = await res.json();
+      if (!res.ok) {
+        console.log(data.message);
+      } else {
+        setUserPosts((prev) => {
+          return prev.filter((post) => post._id !== postIdToDelete);
+        });
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col-reverse sm:flex-row justify-center sm:justify-start items-center sm:items-start w-[100%]  ">
@@ -34,7 +58,13 @@ function Dashboard() {
             {userPosts.length > 0 ? (
               <>
                 {userPosts.map((post) => {
-                  return <PrivateCard key={post._id} post={post} />;
+                  return (
+                    <PrivateCard
+                      key={post._id}
+                      post={post}
+                      deletePost={deletePost}
+                    />
+                  );
                 })}
               </>
             ) : (

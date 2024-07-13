@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function PrivateCard(props) {
   const navigate = useNavigate();
-  const { post } = props;
+  const { post, deletePost } = props;
 
   const date_ = new Date(post.createdAt);
 
@@ -38,11 +38,17 @@ function PrivateCard(props) {
           </p>
         </div>
 
-        <div className="p-[5px] cursor-pointer " onClick={handler}>
-          <p className="text-[23px] font_open_sans font-bold mb-[8px] ">
+        <div className="p-[5px]">
+          <p
+            className="text-[23px] font_open_sans font-bold mb-[8px] cursor-pointer "
+            onClick={handler}
+          >
             {post.title.substr(0, 20) + ".."}
           </p>
-          <p className="mb-[8px] font_verdana font-[100] text-[15px] text-[#567189] content-v ">
+          <p
+            className="mb-[8px] font_verdana font-[100] text-[15px] text-[#567189] content-v cursor-pointer "
+            onClick={handler}
+          >
             {post.content.substr(0, 40) + "..."}
           </p>
 
@@ -50,7 +56,12 @@ function PrivateCard(props) {
             {WordCount(post.content)} read
           </span>
 
-          <i className="fa-regular fa-trash-can mr-[auto] sm:mr-[16px]" />
+          <i
+            className="fa-regular fa-trash-can mr-[auto] sm:mr-[16px]"
+            onClick={() => {
+              deletePost(post._id);
+            }}
+          />
         </div>
       </div>
     </>
