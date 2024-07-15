@@ -56,12 +56,20 @@ function PrivateCard(props) {
             {WordCount(post.content)} read
           </span>
 
-          <i
-            className="fa-regular fa-trash-can mr-[auto] sm:mr-[16px]"
-            onClick={() => {
-              deletePost(post._id);
-            }}
-          />
+          <div className="inline  ">
+            <i
+              className="fa-regular fa-trash-can mr-[auto] sm:mr-[16px] hover:text-red-500  "
+              onClick={() => {
+                deletePost(post._id);
+              }}
+            />
+            <i
+              class="fa-regular fa-pen-to-square mr-[auto] hover:text-green-500 "
+              onClick={() => {
+                navigate(`/update-post/${post._id}`);
+              }}
+            />
+          </div>
         </div>
       </div>
     </>

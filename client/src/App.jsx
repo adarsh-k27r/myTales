@@ -14,6 +14,7 @@ import {
   PrivateRoutePublish,
 } from "./controllers/privateRoute";
 import "./index.css";
+import UpdatePost from "./pages/UpdatePost";
 
 export default function App() {
   return (
@@ -39,6 +40,15 @@ export default function App() {
             element={
               <PrivateRoutePublish>
                 <Publish />
+              </PrivateRoutePublish>
+            }
+          />
+          <Route
+            exact
+            path="/update-post/:postId"
+            element={
+              <PrivateRoutePublish>
+                <UpdatePost />
               </PrivateRoutePublish>
             }
           />

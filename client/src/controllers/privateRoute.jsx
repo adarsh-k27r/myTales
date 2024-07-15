@@ -11,3 +11,8 @@ export const PrivateRoutePublish = ({ children }) => {
   const { currentUser } = useSelector((state) => state.user);
   return currentUser ? children : <Navigate to="/sign-in" />;
 };
+
+export const PrivateRouteUpdatePost = ({ children }) => {
+  const { currentUser } = useSelector((state) => state.user);
+  return currentUser ? children : <Navigate to="/sign-in" />;
+};
