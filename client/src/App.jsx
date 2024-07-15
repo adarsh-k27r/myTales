@@ -15,6 +15,7 @@ import {
 } from "./controllers/privateRoute";
 import "./index.css";
 import UpdatePost from "./pages/UpdatePost";
+import PostPage from "./pages/PostPage";
 
 export default function App() {
   return (
@@ -54,6 +55,7 @@ export default function App() {
           />
           <Route exact path="/stories" element={<Stories />} />
           <Route exact path="/about" element={<About />} />
+          <Route exact path="/post/:postSlug" element={<PostPage />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
