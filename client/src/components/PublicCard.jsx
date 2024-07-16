@@ -52,9 +52,12 @@ function PublicCard(props) {
             <h1 className="text-[20px] font-[600] mb-[2%] font_verdana cursor-pointer ">
               {post.title.substr(0, 20) + ".."}
             </h1>
-            <p className="font_open_sans cursor-pointer ">
-              {post.content.substr(0, 40) + "..."}
-            </p>
+            <p
+              className="font_open_sans cursor-pointer "
+              dangerouslySetInnerHTML={{
+                __html: post && post.content.substr(0, 40) + "...",
+              }}
+            ></p>
 
             <div className="flex mt-[3%] ">
               <p className="ml-[0] mr-[auto] sm:mr-[80%] text-[10px] text-[rgba(117,117,117,1)] font_helvetica ">

@@ -48,9 +48,10 @@ function PrivateCard(props) {
           <p
             className="mb-[8px] font_verdana font-[100] text-[15px] text-[#567189] content-v cursor-pointer "
             onClick={handler}
-          >
-            {post.content.substr(0, 40) + "..."}
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: post && post.content.substr(0, 40) + "...",
+            }}
+          ></p>
 
           <span className="mb-[8px] mr-[75%] sm:mr-[60%] font-[400] text-[10px] font_helvetica text-[rgba(117,117,117,1)] ">
             {WordCount(post.content)} read
