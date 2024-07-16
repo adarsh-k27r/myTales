@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "../stylesheets/utils.css";
 
 function AskMail() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_b9scbys",
+        "template_etzlgir",
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_API_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    document.getElementById("myForm").reset();
+  };
+
   return (
     <>
       <div className="bg-white max-h-[20vh]  sm:h-[25vh] flex flex-col items-center justify-center ">
@@ -10,6 +35,8 @@ function AskMail() {
         </div>
         <form
           id="myForm"
+          ref={form}
+          onSubmit={sendEmail}
           className="py-[3px] px-[15px] rounded-[15px] border border-[rgba(255,0,0,0.155)] border-solid flex bg-white mb-[1rem] "
         >
           <input
