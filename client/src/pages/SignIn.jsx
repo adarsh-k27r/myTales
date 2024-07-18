@@ -11,7 +11,7 @@ import {
 import OAuth from "../components/OAuth";
 
 function SignIn() {
-  const [formData, setFormData] = useState({}); 
+  const [formData, setFormData] = useState({});
   const {
     currentUser,
     loading,
@@ -85,7 +85,7 @@ function SignIn() {
 
           <input
             type="email"
-            className="w-[50%] p-[10px] border border-solid border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[10px] text-black "
+            className="w-[50%] p-[10px] border border-solid border-[rgb(117,117,117,1)] focus:ring-0 focus:border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[10px] text-black "
             id="email"
             placeholder="E-mail"
             onChange={handleChange}
@@ -93,7 +93,7 @@ function SignIn() {
           />
           <input
             type="password"
-            className="w-[50%] p-[10px] border border-solid border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[10px] text-black "
+            className="w-[50%] p-[10px] border border-solid border-[rgb(117,117,117,1)] focus:ring-0 focus:border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[10px] text-black "
             id="password"
             placeholder="**********"
             onChange={handleChange}

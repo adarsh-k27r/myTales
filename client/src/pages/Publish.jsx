@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Publish = () => {
   const [formData, setFormData] = useState({});
+  const [isDisabled, setIsDisabled] = useState(true);
   const [publishError, setPublishError] = useState(null);
 
   const navigate = useNavigate();
@@ -50,19 +51,25 @@ const Publish = () => {
             onChange={(e) => {
               setFormData({ ...formData, title: e.target.value });
             }}
+            autoComplete="off"
+            minLength={5}
           />
 
           <ReactQuill
             theme="snow"
             placeholder="It's confession time:> Just do it!"
             className="h-72 mb-12"
-            required
             onChange={(value) => {
               setFormData({ ...formData, content: value });
+              setIsDisabled(value.length < 47);
             }}
           />
 
-          <Button type="submit" gradientDuoTone="redToYellow">
+          <Button
+            type="submit"
+            gradientDuoTone="redToYellow"
+            disabled={isDisabled}
+          >
             Publish
           </Button>
           {publishError && (

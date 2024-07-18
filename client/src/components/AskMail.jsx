@@ -37,7 +37,7 @@ function AskMail() {
           id="myForm"
           ref={form}
           onSubmit={sendEmail}
-          className="py-[3px] px-[15px] rounded-[15px] border border-[rgba(255,0,0,0.155)] border-solid flex bg-white mb-[1rem] "
+          className="py-[3px] px-[15px] flex mb-[1rem] "
         >
           <input
             type="email"
@@ -45,11 +45,11 @@ function AskMail() {
             placeholder="Email"
             autoComplete="off"
             required
-            className="border-none w-[100%]  "
+            className="bg-white rounded-l-[15px] border border-[rgba(255,0,0,0.155)] border-solid focus:ring-0 focus:border-[rgba(255,0,0,0.155)] "
           />
           <button
             type="submit"
-            className="font_open_sans ml-[10px] py-[2px] px-[14px] border border-solid border-[rgba(0,0,0,0.482)] rounded-[15px] cursor-pointer text-[10pt] font-[500] bg-[rgba(255,0,0,0.155)] no-underline "
+            className="font_open_sans py-[2px] px-[10px] border border-solid border-[rgba(0,0,0,0.482)] rounded-r-[15px] cursor-pointer text-[10pt] font-[500] bg-[rgba(255,0,0,0.155)] no-underline "
           >
             {" "}
             Subscribe{" "}

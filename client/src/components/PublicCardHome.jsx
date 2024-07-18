@@ -43,10 +43,12 @@ const PublicCardHome = () => {
             })}
           </>
         ) : (
-          <p>No latest update, Life is boring nowadays!</p>
+          <p className="!text-center">
+            No latest update, Life is boring nowadays!
+          </p>
         )}
 
-        <div className=" z-[1] static sm:absolute h-[50px] sm:h-[120px] mb-[5%] sm:mb-[4%] bottom-0 left-0 w-[100%] flex items-end justify-center py-[0] px-[24px] fade ">
+        <div className=" z-[1] static sm:absolute h-[50px] sm:h-[120px] mb-[5%] sm:mb-[2.9%] bottom-0 left-0 w-[100%] flex items-end justify-center py-[0] px-[24px] fade ">
           <button
             onClick={handler}
             className=" border border-solid border-[rgba(0,0,0,0.482)] rounded-[15px] py-[5px] px-[10px] font_open_sans font-[500] cursor-pointer text-[10pt] no-underline bg-[rgba(255,0,0,0.155)] "

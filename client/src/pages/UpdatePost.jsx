@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const UpdatePost = () => {
   const [formData, setFormData] = useState({});
+  const [isDisabled, setIsDisabled] = useState(true);
   const [publishError, setPublishError] = useState(null);
   const { currentUser } = useSelector((state) => state.user);
 
@@ -80,20 +81,26 @@ const UpdatePost = () => {
               setFormData({ ...formData, title: e.target.value });
             }}
             value={formData.title}
+            autoComplete="off"
+            minLength={5}
           />
 
           <ReactQuill
             theme="snow"
             placeholder="It's confession time:> Just do it!"
             className="h-72 mb-12"
-            required
             onChange={(value) => {
               setFormData({ ...formData, content: value });
+              setIsDisabled(value.length < 47);
             }}
             value={formData.content}
           />
 
-          <Button type="submit" gradientDuoTone="redToYellow">
+          <Button
+            type="submit"
+            gradientDuoTone="redToYellow"
+            disabled={isDisabled}
+          >
             Update Post
           </Button>
           {publishError && (

@@ -89,7 +89,7 @@ function SignUp() {
           </span>
           <input
             type="text"
-            className="w-[45%] p-[10px] border border-solid border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[8px] text-black "
+            className="w-[45%] p-[10px] border border-solid border-[rgb(117,117,117,1)] focus:ring-0 focus:border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[8px] text-black "
             id="name"
             placeholder="Name"
             onChange={handleChange}
@@ -97,7 +97,7 @@ function SignUp() {
           />
           <input
             type="text"
-            className="w-[45%] p-[10px] border border-solid border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[8px] text-black "
+            className="w-[45%] p-[10px] border border-solid border-[rgb(117,117,117,1)] focus:ring-0 focus:border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[8px] text-black "
             id="username"
             placeholder="Username"
             onChange={handleChange}
@@ -105,7 +105,7 @@ function SignUp() {
           />
           <input
             type="email"
-            className="w-[45%] p-[10px] border border-solid border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[8px] text-black "
+            className="w-[45%] p-[10px] border border-solid border-[rgb(117,117,117,1)] focus:ring-0 focus:border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[8px] text-black "
             id="email"
             placeholder="Email ID"
             onChange={handleChange}
@@ -113,7 +113,7 @@ function SignUp() {
           />
           <input
             type="password"
-            className="w-[45%] p-[10px] border border-solid border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[8px] text-black "
+            className="w-[45%] p-[10px] border border-solid border-[rgb(117,117,117,1)] focus:ring-0 focus:border-[rgb(117,117,117,1)] rounded-[15px] font-sans m-[8px] text-black "
             id="password"
             placeholder="Password"
             onChange={handleChange}

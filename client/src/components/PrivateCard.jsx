@@ -29,45 +29,45 @@ function PrivateCard(props) {
     <>
       <div className="w-[90%] sm:w-[40%] max-w-[90%] sm:max-w-[40%] flex items-center justify-center min-w-[40%] p-[40px] my-[0] mx-[5%] ">
         <div className="flex justify-center items-center flex-col mr-[15px] ">
-          <p className="font_poppins font-[800] text-[#567189] text-[13px] ">
+          <p className="font_poppins font-[800] text-[#567189] text-[16px] ">
             {formatted_month}
           </p>
           <hr className="w-[40px] border border-solid border-[rgb(221,221,221)] my-[5px] mx-[0] " />
-          <p className="font_verdana font-[400] text-[13px] ">
+          <p className="font_verdana font-[400] text-[16px] ">
             {formatted_date}
           </p>
         </div>
 
         <div className="p-[5px]">
           <p
-            className="text-[23px] font_open_sans font-bold mb-[8px] cursor-pointer "
+            className="text-[23px] font_open_sans font-bold mb-[5px] cursor-pointer "
             onClick={handler}
           >
             {post.title.substr(0, 20) + ".."}
           </p>
           <p
-            className="mb-[8px] font_verdana font-[100] text-[15px] text-[#567189] content-v cursor-pointer "
+            className="mb-[5px] font_verdana font-[100] text-[15px] text-[#567189] content-v cursor-pointer "
             onClick={handler}
             dangerouslySetInnerHTML={{
               __html: post && post.content.substr(0, 40) + "...",
             }}
           ></p>
 
-          <span className="mb-[8px] mr-[75%] sm:mr-[60%] font-[400] text-[10px] font_helvetica text-[rgba(117,117,117,1)] ">
+          <span className="mb-[5px] mr-[55%] sm:mr-[40%] font-[400] text-[13px] font_helvetica text-[rgba(117,117,117,1)] ">
             {WordCount(post.content)} read
           </span>
 
-          <div className="inline  ">
+          <div className="inline ">
             <i
-              className="fa-regular fa-trash-can mr-[auto] sm:mr-[16px] hover:text-red-500  "
+              className="fa-regular fa-pen-to-square hover:text-green-500 "
               onClick={() => {
-                deletePost(post._id);
+                navigate(`/update-post/${post._id}`);
               }}
             />
             <i
-              class="fa-regular fa-pen-to-square mr-[auto] hover:text-green-500 "
+              className="fa-regular fa-trash-can ml-4 hover:text-red-500  "
               onClick={() => {
-                navigate(`/update-post/${post._id}`);
+                deletePost(post._id);
               }}
             />
           </div>

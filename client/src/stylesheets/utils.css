@@ -47,6 +47,10 @@ font-family: 'Raleway', sans-serif; */
     font-family: 'Playfair', serif;
 }
 
+.font_merri {
+    font-family: 'Merriweather', serif;
+}
+
 
 input:focus {
     outline: none !important;

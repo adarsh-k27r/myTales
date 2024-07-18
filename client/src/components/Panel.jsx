@@ -33,7 +33,7 @@ function Panel() {
             })}
           </>
         ) : (
-          <p>No posts to show yet!</p>
+          <p className="!text-center text-red-600 ">No posts to show yet!</p>
         )}
       </div>
     </>

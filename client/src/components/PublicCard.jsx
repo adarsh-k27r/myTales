@@ -35,13 +35,13 @@ function PublicCard(props) {
             alt="avatar"
             className="w-[5%] sm:w-[2%] mr-[5px] "
           />
-          <p className="my-[0] mx-[5px] text-[10px] font_arial  ">
+          <p className="my-[0] mx-[5px] text-[13px] font_arial  ">
             {post.author}
           </p>
           <span className="text-[rgba(117,117,117,1)] font_arial my-[0] mx-[4px]">
             .
           </span>
-          <p className="my-[0] mx-[5px] font_arial text-[10px] text-[rgba(117,117,117,1)] ">
+          <p className="my-[0] mx-[5px] font_arial text-[13px] text-[rgba(117,117,117,1)] ">
             {" "}
             {formatted_date}{" "}
           </p>
@@ -60,7 +60,7 @@ function PublicCard(props) {
             ></p>
 
             <div className="flex mt-[3%] ">
-              <p className="ml-[0] mr-[auto] sm:mr-[80%] text-[10px] text-[rgba(117,117,117,1)] font_helvetica ">
+              <p className="ml-[0] mr-[auto] sm:mr-[80%] text-[13px] text-[rgba(117,117,117,1)] font_helvetica ">
                 {WordCount(post.content)} read
               </p>
             </div>

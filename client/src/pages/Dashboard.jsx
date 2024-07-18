@@ -68,7 +68,9 @@ function Dashboard() {
                 })}
               </>
             ) : (
-              <p>You haven't posted anything yet! </p>
+              <p className="!text-center ml-2 text-red-500 ">
+                You haven't posted anything yet!{" "}
+              </p>
             )}
           </section>
         </div>
