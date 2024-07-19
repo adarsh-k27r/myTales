@@ -1,5 +1,6 @@
 import { errorHandler } from "../utils/error.js";
 import User from "../models/user.model.js";
+import Post from "../models/post.model.js";
 
 // Route 1: Delete User Route (Authorisation required)
 
@@ -9,8 +10,16 @@ export const deleteUser = async (req, res, next) => {
   }
 
   try {
+    // Delete all posts by the user
+    await Post.deleteMany({ userId: req.params.userId });
+
+    // Delete the user
     await User.findByIdAndDelete(req.params.userId);
-    res.status(200).json("User has been deleted");
+
+    res
+      .clearCookie("access_token")
+      .status(200)
+      .json("User and their posts have been deleted");
   } catch (error) {
     next(error);
   }

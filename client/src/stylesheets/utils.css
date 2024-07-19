@@ -79,6 +79,12 @@ i {
     background-position: left;
 }
 
+.bg_quit {
+    background-image: url("../assets/quit.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+
+}
 
 .content-v {
     display: -webkit-box;
