@@ -71,6 +71,12 @@ i {
         height: fit-content !important;
         padding-bottom: 5%;
     }
+
+    .bg_about {
+        height: fit-content !important;
+        background-image: none !important;
+
+    }
 }
 
 
@@ -80,9 +86,25 @@ i {
 }
 
 .bg_quit {
-    background-image: url("../assets/quit.svg");
+    background-image: url("../assets/doodle.svg");
     background-position: right;
     background-repeat: no-repeat;
+
+}
+
+.bg_about {
+    background-image: url("../assets/bg_about/envelope.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.bg_teller {
+    background-image: url("../assets/bg_about/work.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 
 }
 

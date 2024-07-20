@@ -104,14 +104,14 @@ function Dashboard() {
             )}
           </section>
         </div>
-        <div className="hidden sm:flex justify-between items-center bg_quit h-[89vh] fixed font_open_sans w-[20%] border-l border-solid border-gray-600 right-0 bg-white flex-col    ">
-          <p className="font_verdana text-lg font-[600] my-[1%] mx-[auto]  ">
+        <div className="hidden sm:flex justify-between items-center bg_quit h-[89vh] fixed font_open_sans w-[20%] border-none right-0 bg-white flex-col    ">
+          <p className="font_verdana text-zinc-600 text-lg font-[600] mt-[50%] mx-[auto]  ">
             Hii {currentUser.name}{" "}
           </p>
           <Button
             type="button"
             gradientDuoTone="redToYellow"
-            className=" font-medium cursor-pointer "
+            className=" font-medium cursor-pointer mb-[45%] "
             onClick={() => setShowModal(true)}
           >
             Delete Account
