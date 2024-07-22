@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import Publish from "./pages/Publish";
 import Stories from "./pages/Stories";
 import About from "./pages/About";
@@ -21,7 +21,7 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/sign-in" element={<SignIn />} />
